@@ -70,27 +70,27 @@ def summarizeRefAlt(inputFile, STDFlag, fa_alt, fa_ref1, fa_ref2, fa_ref, output
                 edlib_ret = [100,100,100,100,100,100,100,100]
 
                 # alt
-                ret = edlib.align(line, fa_alt, mode="HW", task="path")
+                ret = edlib.align(line, fa_alt, mode="HW", task="distance")
                 edlib_ret[0] = ret["editDistance"]
-                ret = edlib.align(rc_line, fa_alt, mode="HW", task="path")
+                ret = edlib.align(rc_line, fa_alt, mode="HW", task="distance")
                 edlib_ret[1] = ret["editDistance"]
 
                 if fa_ref == "":
                     # ref1
-                    ret = edlib.align(line, fa_ref1, mode="HW", task="path")
+                    ret = edlib.align(line, fa_ref1, mode="HW", task="distance")
                     edlib_ret[2] = ret["editDistance"]
-                    ret = edlib.align(rc_line, fa_ref1, mode="HW", task="path")
+                    ret = edlib.align(rc_line, fa_ref1, mode="HW", task="distance")
                     edlib_ret[3] = ret["editDistance"]
                     # ref2
-                    ret = edlib.align(line, fa_ref2, mode="HW", task="path")
+                    ret = edlib.align(line, fa_ref2, mode="HW", task="distance")
                     edlib_ret[4] = ret["editDistance"]
-                    ret = edlib.align(rc_line, fa_ref2, mode="HW", task="path")
+                    ret = edlib.align(rc_line, fa_ref2, mode="HW", task="distance")
                     edlib_ret[5] = ret["editDistance"]
                 else:
                     # ref
-                    ret = edlib.align(line, fa_ref, mode="HW", task="path")
+                    ret = edlib.align(line, fa_ref, mode="HW", task="distance")
                     edlib_ret[6] = ret["editDistance"]
-                    ret = edlib.align(rc_line, fa_ref, mode="HW", task="path")
+                    ret = edlib.align(rc_line, fa_ref, mode="HW", task="distance")
                     edlib_ret[7] = ret["editDistance"]
 
                 if read_pair == 1:
